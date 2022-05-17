@@ -3,6 +3,7 @@ const {
     binary_search,
     selection_sort, 
     bubble_sort,
+    quick_sort,
 } = require('./algorithms')
 
 !async function() {
@@ -35,4 +36,14 @@ const {
     console.log(bubbleArr)
 
     console.log(await bubble_sort(bubbleArr))
+
+    console.log('Quick sort')
+
+    const quickRandom = await random_int(1, 20)
+    const quickArr = await array_gen(quickRandom)
+
+    console.log(quickRandom)
+    console.log(quickArr)
+
+    console.log(await quick_sort(quickArr))
 }()
