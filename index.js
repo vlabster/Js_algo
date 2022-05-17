@@ -2,6 +2,7 @@ const { array_gen, random_int, array_sort } = require('./helpers')
 const { 
     binary_search,
     selection_sort, 
+    bubble_sort,
 } = require('./algorithms')
 
 !async function() {
@@ -24,4 +25,14 @@ const {
     console.log(selectionArr)
 
     console.log(await selection_sort(selectionArr))
+
+    console.log('Bubble sort')
+
+    const bubbleRandom = await random_int(1, 20)
+    const bubbleArr = await array_gen(bubbleRandom)
+
+    console.log(bubbleRandom)
+    console.log(bubbleArr)
+
+    console.log(await bubble_sort(bubbleArr))
 }()
