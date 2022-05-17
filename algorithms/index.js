@@ -1,7 +1,3 @@
-const binary_search = require('./binary_search')
-const selection_sort = require('./selection_sort')
+const dynamic_include = require('../dynamic_include')
 
-module.exports = {
-    binary_search,
-    selection_sort,
-}
+module.exports = dynamic_include(__dirname, __filename)
