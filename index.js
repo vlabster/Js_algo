@@ -5,6 +5,7 @@ const {
     bubble_sort,
     quick_sort,
     breadth_search,
+    dijkstra_search,
 } = require('./algorithms')
 
 !async function() {
@@ -56,4 +57,15 @@ const {
     graph_s_p.f = ['g']
 
     console.log(await breadth_search(graph_s_p, 'a', 'g'))
+
+    const graph_dijkstra = {}
+    graph_dijkstra.a = { b: 1, c: 5 }
+    graph_dijkstra.b = { d: 15 }
+    graph_dijkstra.c = { e: 10, f: 12 }
+    graph_dijkstra.d = { g: 5 }
+    graph_dijkstra.e = { g: 2 }
+    graph_dijkstra.f = { e: 1, g: 3 }
+    graph_dijkstra.g = {}
+
+    console.log(await dijkstra_search(graph_dijkstra, 'a'))
 }()
