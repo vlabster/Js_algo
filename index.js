@@ -4,6 +4,7 @@ const {
     selection_sort, 
     bubble_sort,
     quick_sort,
+    breadth_search,
 } = require('./algorithms')
 
 !async function() {
@@ -46,4 +47,13 @@ const {
     console.log(quickArr)
 
     console.log(await quick_sort(quickArr))
+
+    const graph_s_p = []
+    graph_s_p.a = ['b', 'c']
+    graph_s_p.b = ['d']
+    graph_s_p.c = ['e', 'f']
+    graph_s_p.d = ['e', 'g']
+    graph_s_p.f = ['g']
+
+    console.log(await breadth_search(graph_s_p, 'a', 'g'))
 }()
