@@ -18,7 +18,7 @@ const findNodeLowerCost = async(costs, processed) => {
 const dijkstra_search = async (graph, start) => {
     const costs = {}
     const processed = []
-    let neightbords = {}
+    let neighbors = {}
 
     Object.keys(graph).forEach(node => {
         if (node !== start) {
@@ -31,11 +31,11 @@ const dijkstra_search = async (graph, start) => {
 
     while (node) {
         const cost = costs[node]
-        neightbords = graph[node]
-        Object.keys(neightbords).forEach(neightbord => {
-            let newCost = cost + neightbords[neightbord]
-            if (newCost < costs[neightbord]) {
-                costs[neightbord] = newCost
+        neighbors = graph[node]
+        Object.keys(neighbors).forEach(neighbor => {
+            let newCost = cost + neighbors[neighbor]
+            if (newCost < costs[neighbor]) {
+                costs[neighbor] = newCost
             }
         })
         processed.push(node)
